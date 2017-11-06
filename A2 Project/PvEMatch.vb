@@ -9,9 +9,10 @@
     Private Sub PvEMatch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim loopcounter As Integer = 0
         Dim loopcounterAI As Integer = 0
-        Dim x, y, sizeX, sizeY, nameX, nameY As String
+        Dim x, y, AIx, AIy, sizeX, sizeY, nameX, nameY, AInamex, AInamey As String
         Dim buttons As New List(Of ButtonState)
-        Dim Array(120) As Button 'logic error, put in 225 instead of 224, did not account for 0 as the start,
+        Dim Array(99) As Button 'logic error, put in 225 instead of 224, did not account for 0 as the start,
+        Dim AIArray(99)
 
         x = 0
         y = 0
@@ -20,7 +21,7 @@
         nameX = 0
         nameY = 0
 
-        'buttons.Add()
+
 
         Do
             Array(loopcounter) = New Button
@@ -39,61 +40,31 @@
             loopcounter += 1
         Loop Until loopcounter = 100
 
-        'Drawgrid()
-        Dim loopcounter As Integer = 0
-        Dim loopcounterAI As Integer = 0
-        Dim x, y, sizeX, sizeY, nameX, nameY As String
-        Dim Array(99) As Button 'logic error, put in 225 instead of 224, did not account for 0 as the start,
-        'produced an extra button
-        Dim AIArray(99) As Button
-        x = 0
-        y = 0
+
         AIx = 600
         AIy = 0
         sizeX = 30
         sizeY = 30
         AInameX = 0
-        AInameY = 0
-        nameX = 0
-        nameY = 0
+        AInamey = 0
+
         Do
-        'Array(loopcounter) = New Button
-        'Array(loopcounter).Parent = Me
-        'Array(loopcounter).Name = "X: " & nameX & "Y: " & nameY
-        'Array(loopcounter).SetBounds(x, y, sizeX, sizeY)
-        'Array(loopcounter).Text = ""
-        'x = x + 30
-        '
-        'If x = 300 Then
-        'nameY += 1
-        'nameX = 0
-        'y += 30
-        'x = 0
-        'End If
-        'Loop Until loopcounter = 100
+            AIArray(loopcounterAI) = New Button
+            AIArray(loopcounterAI).Parent = Me
+            AIArray(loopcounterAI).Name = “X: “ & AInamex & “Y: “ & AInamey
+            AIArray(loopcounterAI).SetBounds(AIx, AIy, sizeX, sizeY)
+            AIArray(loopcounterAI).Text = ""
+            AInamex = AInamex + 1
+            loopcounterAI = loopcounterAI + 1
+            AIx = AIx + 30
 
-        'Do
-        'AIArray(loopcounterAI) = New Button
-        'AIArray(loopcounterAI).Parent = Me
-        'AIArray(loopcounterAI).Name = “X: “ & AInameX & “Y: “ & AInameY
-        'AIArray(loopcounterAI).SetBounds(AIx, AIy, sizeX, sizeY)
-        'AIArray(loopcounterAI).Text = ""
-        'AInameX = AInameX + 1
-        'loopcounterAI = loopcounterAI + 1
-        'AIx = AIx + 30
-        'If loopcounter = 225 Then
-        'btn_Start.Visible = False
-
-        'Exit Do
-        'End If
-
-        'If AIx = 900 Then 'changed from If nameX = 15 to x = 450 (15*30, space between 15 buttons) essetially the same thing
-        '        AInameY += 1
-        '   AInameX = 0
-        '  AIy += 30
-        ' AIx = 600
-        'End If
-        'Loop Until loopcounterAI = 100
+            If AIx = 900 Then 'changed from If nameX = 15 to x = 450 (15*30, space between 15 buttons) essetially the same thing
+                AInamey += 1
+                AInamex = 0
+                AIy += 30
+                AIx = 600
+            End If
+        Loop Until loopcounterAI = 100
 
 
 
