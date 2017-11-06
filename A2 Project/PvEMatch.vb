@@ -6,6 +6,7 @@
     'edit2: removed lines 26 to 30 as it was used just to test if the grid had spawned. SS:2
     'future edit:* Make another 10x10 grid to show the AI's battlefield, show no outputs if user clicks on their own battlefield. *
     'edit3: split one shared screen into two interchangable forms as program could not process 200 buttons on one form window. SS: 3
+    'program can handle 200 buttons at any given point, it was a problem with the loopcounter
     Private Sub PvEMatch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim loopcounter As Integer = 0
         Dim loopcounterAI As Integer = 0
@@ -20,8 +21,6 @@
         sizeY = 30
         nameX = 0
         nameY = 0
-
-
 
         Do
             Array(loopcounter) = New Button
