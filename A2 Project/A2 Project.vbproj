@@ -94,6 +94,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Objects\Player.vb" />
+    <Compile Include="Objects\Ship.vb" />
     <Compile Include="PvE Menu.Designer.vb">
       <DependentUpon>PvE Menu.vb</DependentUpon>
     </Compile>
