@@ -9,7 +9,73 @@
         player1 = New Player
         player2 = New Player
     End Sub
+    Private Sub GridGenerator(xtostart As Integer, ByRef TargetPlayer As Player)
+        Dim loopcounter As Integer = 0
+        Dim sizeX, sizeY, nameX, nameY As String
+        Dim y As Integer
+        Dim Array(99) As GridItem
 
+        y = 0
+        sizeX = 30
+        sizeY = 30
+        nameX = 1
+        nameY = 1
+
+        For Each griditemelement As GridItem In Array
+            griditemelement = New GridItem
+            griditemelement.gridx = nameX
+            griditemelement.gridy = nameY
+            griditemelement.Parent = Me
+            griditemelement.Name = nameX & "," & nameY
+            griditemelement.SetBounds(xtostart, y, sizeX, sizeY)
+            griditemelement.Text = griditemelement.Name
+            If player1.Ships(nameX, nameY) Then
+                griditemelement.Text = "O"
+            End If
+            nameX = nameX + 1
+            loopcounter = loopcounter + 1
+            xtostart = xtostart + 30
+            If loopcounter = 100 Then
+                btn_Start.Visible = False
+            End If
+
+            If nameX = 11 Then
+                nameY += 1
+                nameX = 1
+                y += 30
+                xtostart = 0
+            End If
+        Next
+
+        'Do
+        '    Array(loopcounter) = New GridItem
+        '    Array(loopcounter).gridx = nameX
+        '    Array(loopcounter).gridy = nameY
+        '    Array(loopcounter).Parent = Me
+        '    Array(loopcounter).Name = nameX & "," & nameY
+        '    Array(loopcounter).SetBounds(xtostart, y, sizeX, sizeY)
+        '    Array(loopcounter).Text = Array(loopcounter).Name
+        '    If player1.Ships(nameX, nameY) Then
+        '        Array(loopcounter).Text = "O"
+        '    End If
+        '    nameX = nameX + 1
+        '    loopcounter = loopcounter + 1
+        '    xtostart = xtostart + 30
+        '    If loopcounter = 100 Then
+        '        btn_Start.Visible = False
+
+        '        Exit Do
+        '    End If
+
+        '    If nameX = 11 Then
+        '        nameY += 1
+        '        nameX = 1
+        '        y += 30
+        '        xtostart = 0
+        '    End If
+        'Loop While loopcounter <= 250
+        TargetPlayer.playergridbuttons = Array(99)
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
         btn_Start.Hide()
         btn_P1Enter.Hide()
@@ -17,53 +83,54 @@
         lbl_Playerships.Hide()
         txtbox_playerships.Hide()
         txtbox_Username.Hide()
+        GridGenerator(0, player1)
+        GridGenerator(600, player2)
+        ' Dim loopcounter As Integer = 0
+        'Dim sizeX, sizeY, nameX, nameY As String
+        'Dim x, y As Integer
+        'Dim Array(99) As GridItem
+        'x = 0
+        'y = 0
+        'sizeX = 30
+        'sizeY = 30
+        'nameX = 1
+        'nameY = 1
 
-        Dim loopcounter As Integer = 0
-        Dim sizeX, sizeY, nameX, nameY As String
-        Dim x, y As Integer
-        Dim Array(99) As GridItem
-        x = 0
-        y = 0
-        sizeX = 30
-        sizeY = 30
-        nameX = 1
-        nameY = 1
-
-        'For Each griditemelement As GridItem In Array
+        ' For Each griditemelement As GridItem In Array
         'griditemelement = New GridItem
         'Next
 
-        Do
-            Array(loopcounter) = New GridItem
-            Array(loopcounter).gridx = nameX
-            Array(loopcounter).gridy = nameY
-            Array(loopcounter).Parent = Me
-            Array(loopcounter).Name = nameX & "," & nameY
-            Array(loopcounter).SetBounds(x, y, sizeX, sizeY)
-            Array(loopcounter).Text = Array(loopcounter).Name
-            If player1.Ships(nameX, nameY) Then
-                Array(loopcounter).Text = "O"
-            End If
-            nameX = nameX + 1
-            loopcounter = loopcounter + 1
-            x = x + 30
-            If loopcounter = 100 Then
-                btn_Start.Visible = False
+        '        Do
+        '       Array(loopcounter) = New GridItem
+        '      Array(loopcounter).gridx = nameX
+        '     Array(loopcounter).gridy = nameY
+        '    Array(loopcounter).Parent = Me
+        '   Array(loopcounter).Name = nameX & "," & nameY
+        '  Array(loopcounter).SetBounds(x, y, sizeX, sizeY)
+        ' Array(loopcounter).Text = Array(loopcounter).Name
+        'If player1.Ships(nameX, nameY) Then
+        'Array(loopcounter).Text = "O"
+        'End If
+        'nameX = nameX + 1
+        'loopcounter = loopcounter + 1
+        'x = x + 30
+        'If loopcounter = 100 Then
+        'btn_Start.Visible = False
 
-                Exit Do
-            End If
-
-            If nameX = 11 Then
-                nameY += 1
-                nameX = 1
-                y += 30
-                x = 0
-            End If
-        Loop While loopcounter <= 225
+        'Exit Do
+        'End If
+        '
+        'If nameX = 11 Then
+        'nameY += 1
+        'nameX = 1
+        'y += 30
+        'x = 0
+        'End If
+        'Loop While loopcounter <= 225
 
         'Dim player1 As New Player
-        Dim transferloop1 As Integer = 0
-        Dim transferloop2 As Integer = 0
+        'Dim transferloop1 As Integer = 0
+        'Dim transferloop2 As Integer = 0
 
         'Do
         'If Array(transferloop2).gridx = player1.Ships(transferloop2, transferloop2) Then

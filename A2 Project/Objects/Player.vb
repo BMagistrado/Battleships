@@ -4,8 +4,15 @@
     Private playerName As String
     Private playerShips(10, 10) As Boolean
     Private Shipname As String
-
-
+    Private gridbuttons(99) As GridItem
+    Public Property playergridbuttons As GridItem
+        Get
+            Return gridbuttons(99)
+        End Get
+        Set(value As GridItem)
+            gridbuttons(99) = value
+        End Set
+    End Property
     Public Property Name() As String
         Get
             Return playerName
