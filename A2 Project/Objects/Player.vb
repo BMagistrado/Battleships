@@ -2,7 +2,7 @@
     Dim x As Integer
     Dim y As Integer
     Private playerName As String
-    Private playerShips(9, 9) As Integer
+    Private playerShips(10, 10) As Integer
     Private Shipname As String
 
 

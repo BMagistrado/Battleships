@@ -56,7 +56,7 @@
         Dim transferloop2 As Integer = 0
 
         Do
-            If Array(transferloop2).gridx = player1.playerx.ToString And Array(transferloop2).gridy = player1.playery Then
+            If Array(transferloop2).gridx = player1.Ships(transferloop1, transferloop2) Then
                 Array(transferloop2).Text = "O"
                 transferloop1 += 1
             End If
@@ -68,8 +68,8 @@
 
         player1.Name = txtbox_Username.Text
         'MsgBox("Your username is " & Player1.Name)
-        Dim shipcounterx As Integer = 0
-        Dim shipcountery As Integer = 0
+        Dim shipcounterx As Integer = 1
+        Dim shipcountery As Integer = 1
         'Player1.Ships(Player1.playerx, Player1.playery) = txtbox_playerships.Text
         'Do
 
@@ -78,7 +78,7 @@
                 player1.Ships(shipcounterx, shipcountery) = player1.Ships(shipcounterx, shipcountery)
                 shipcounterx += 1
                 shipcountery += 1
-            Loop Until shipcounterx = 10
+            Loop Until shipcounterx = 11
 
         Else
             player1.Ships(player1.playerx, player1.playery) = txtbox_playerships.Text
