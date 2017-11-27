@@ -2,7 +2,7 @@
     Dim x As Integer
     Dim y As Integer
     Private playerName As String
-    Private playerShips(10, 10) As Integer
+    Private playerShips(10, 10) As Boolean
     Private Shipname As String
 
 
@@ -15,12 +15,12 @@
         End Set
     End Property
 
-    Public Property Ships(x, y) As Integer
+    Public Property Ships(playerx, playery) As Boolean
         Get
-            Return playerShips(x, y)
+            Return playerShips(playerx, playery)
         End Get
-        Set(value As Integer)
-            playerShips(x, y) = value
+        Set(value As Boolean)
+            playerShips(playerx, playery) = value
 
         End Set
     End Property
