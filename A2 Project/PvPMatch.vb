@@ -9,17 +9,18 @@
         player1 = New Player
         player2 = New Player
     End Sub
-    Private Sub GridGenerator(xtostart As Integer, ByRef TargetPlayer As Player)
+    Private Sub GridGenerator(ByRef xtostart As Integer, ByRef TargetPlayer As Player)
+        btn_Start.Visible = False
         Dim loopcounter As Integer = 0
         Dim sizeX, sizeY, nameX, nameY As String
         Dim y As Integer
         Dim Array(99) As GridItem
-
+        Dim xtostartinitial = xtostart
         y = 0
         sizeX = 30
         sizeY = 30
-        nameX = 1
-        nameY = 1
+        nameX = 0
+        nameY = 0
 
         For Each griditemelement As GridItem In Array
             griditemelement = New GridItem
@@ -29,21 +30,41 @@
             griditemelement.Name = nameX & "," & nameY
             griditemelement.SetBounds(xtostart, y, sizeX, sizeY)
             griditemelement.Text = griditemelement.Name
-            If player1.Ships(nameX, nameY) Then
-                griditemelement.Text = "O"
-            End If
+
+
+
+
+
+
+
+
+
+
+
             nameX = nameX + 1
             loopcounter = loopcounter + 1
             xtostart = xtostart + 30
-            If loopcounter = 100 Then
-                btn_Start.Visible = False
-            End If
 
-            If nameX = 11 Then
+
+
+
+
+
+
+
+
+
+
+
+
+            If loopcounter Mod 10.0 = 0 And loopcounter <> 0 Then 'MOD operator returns remainder of loopcounter/10 to check if it is at the last button
                 nameY += 1
-                nameX = 1
+                nameX = 0
                 y += 30
-                xtostart = 0
+                xtostart = xtostartinitial
+            End If
+            If TargetPlayer.Ships(nameX, nameY) Then
+                griditemelement.Text = "O"
             End If
         Next
 
@@ -74,7 +95,7 @@
         '        xtostart = 0
         '    End If
         'Loop While loopcounter <= 250
-        TargetPlayer.playergridbuttons = Array(99)
+        'TargetPlayer.playergridbuttons = Array(99) 'this has no effect on problem or generation
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
         btn_Start.Hide()
