@@ -5,6 +5,8 @@
     Private playerShips(10, 10) As Boolean
     Private Shipname As String
     Private gridbuttons(99) As GridItem
+    Private health As String = 5
+
     Public Property playergridbuttons As GridItem
         Get
             Return gridbuttons(99)

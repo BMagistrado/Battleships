@@ -28,6 +28,7 @@ Partial Class PvPMatch
         Me.btn_P1Enter = New System.Windows.Forms.Button()
         Me.txtbox_playerships = New System.Windows.Forms.TextBox()
         Me.lbl_Playerships = New System.Windows.Forms.Label()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'btn_Start
@@ -35,7 +36,7 @@ Partial Class PvPMatch
         Me.btn_Start.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btn_Start.Font = New System.Drawing.Font("Consolas", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Start.ForeColor = System.Drawing.Color.LimeGreen
-        Me.btn_Start.Location = New System.Drawing.Point(382, 460)
+        Me.btn_Start.Location = New System.Drawing.Point(358, 157)
         Me.btn_Start.Name = "btn_Start"
         Me.btn_Start.Size = New System.Drawing.Size(171, 51)
         Me.btn_Start.TabIndex = 0
@@ -80,6 +81,7 @@ Partial Class PvPMatch
         Me.txtbox_playerships.Name = "txtbox_playerships"
         Me.txtbox_playerships.Size = New System.Drawing.Size(270, 20)
         Me.txtbox_playerships.TabIndex = 4
+        Me.txtbox_playerships.Visible = False
         '
         'lbl_Playerships
         '
@@ -92,6 +94,15 @@ Partial Class PvPMatch
         Me.lbl_Playerships.Size = New System.Drawing.Size(333, 38)
         Me.lbl_Playerships.TabIndex = 5
         Me.lbl_Playerships.Text = "Enter the coordinates for your ships" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "one at a time:"
+        Me.lbl_Playerships.Visible = False
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(348, 414)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(234, 116)
+        Me.RichTextBox1.TabIndex = 6
+        Me.RichTextBox1.Text = ""
         '
         'PvPMatch
         '
@@ -99,13 +110,15 @@ Partial Class PvPMatch
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.A2_Project.My.Resources.Resources.Battleship_Background__6
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(925, 558)
+        Me.ClientSize = New System.Drawing.Size(899, 561)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.lbl_Playerships)
         Me.Controls.Add(Me.txtbox_playerships)
         Me.Controls.Add(Me.btn_P1Enter)
         Me.Controls.Add(Me.lbl_P1Username)
         Me.Controls.Add(Me.txtbox_Username)
         Me.Controls.Add(Me.btn_Start)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "PvPMatch"
         Me.Text = "PvPMatch"
         Me.ResumeLayout(False)
@@ -119,4 +132,5 @@ Partial Class PvPMatch
     Friend WithEvents btn_P1Enter As Button
     Friend WithEvents txtbox_playerships As TextBox
     Friend WithEvents lbl_Playerships As Label
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class
