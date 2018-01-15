@@ -25,7 +25,7 @@
     End Sub
 
     Private Sub GridGenerator(ByRef xtostart As Integer, ByRef TargetPlayer As Player)
-        btn_Start.Visible = False
+        Btn_Start.Visible = False
         Dim loopcounter As Integer = 0
         Dim sizeX, sizeY, nameX, nameY As String
         Dim y As Integer
@@ -63,19 +63,28 @@
         PvPMatch()
 
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
-        btn_Start.Hide()
-        btn_P1Enter.Hide()
+    Private Sub Btn_Start_Click(sender As Object, e As EventArgs) Handles Btn_Start.Click
+        Btn_Start.Hide()
+        Btn_P1Enter.Hide()
         lbl_P1Username.Hide()
         lbl_Playerships.Hide()
         txtbox_playerships.Hide()
         txtbox_Username.Hide()
+        'For y As Integer = 0 To 9
+        ' player1.Ships(CInt(Math.Ceiling(Rnd() * 10)), CInt(Math.Ceiling(Rnd() * 10))) = True
+        'player2.Ships(CInt(Math.Ceiling(Rnd() * 10)), CInt(Math.Ceiling(Rnd() * 10))) = True
+        ' Next
+        Dim r As New Random
+        For y As Integer = 0 To 9
+            player1.Ships(r.Next(0, 9), r.Next(0, 9)) = True
+            player2.Ships(r.Next(0, 9), r.Next(0, 9)) = True
+        Next
         GridGenerator(0, player1)
         GridGenerator(600, player2)
 
     End Sub
 
-    Private Sub btn_P1Enter_Click(sender As Object, e As EventArgs) Handles btn_P1Enter.Click
+    Private Sub Btn_P1Enter_Click(sender As Object, e As EventArgs) Handles Btn_P1Enter.Click
         'player1.Name = "testuser"
         player1.Name = txtbox_Username.Text
         'MsgBox("Your username is " & Player1.Name)
@@ -84,13 +93,23 @@
         'Player1.Ships(Player1.playerx, Player1.playery) = txtbox_playerships.Text
         'Do
 
-        If txtbox_Username.Text = "testuser" Then
+        Dim r As Random = New Random
+        For y As Integer = 0 To 9
+            player1.Ships(r.Next(1, 10), r.Next(1, 10)) = True
+            player2.Ships(r.Next(1, 10), r.Next(1, 10)) = True
+        Next
+
+
+
+
+
+        If txtbox_Username.Text = "" Then
             ''Do
             'player1.Ships(shipcounterx, shipcountery) = player1.Ships(shipcounterx, shipcountery)
             'shipcounterx += 1
             'shipcountery += 1
             'Loop Until shipcounterx = 10
-            For y As Integer = 0 To 10
+            For y As Integer = 0 To 9
                 player1.Ships(CInt(Math.Ceiling(Rnd() * 10)), CInt(Math.Ceiling(Rnd() * 10))) = True
                 player2.Ships(CInt(Math.Ceiling(Rnd() * 10)), CInt(Math.Ceiling(Rnd() * 10))) = True
             Next

@@ -22,26 +22,26 @@ Partial Class PvPMatch
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btn_Start = New System.Windows.Forms.Button()
+        Me.Btn_Start = New System.Windows.Forms.Button()
         Me.txtbox_Username = New System.Windows.Forms.TextBox()
         Me.lbl_P1Username = New System.Windows.Forms.Label()
-        Me.btn_P1Enter = New System.Windows.Forms.Button()
+        Me.Btn_P1Enter = New System.Windows.Forms.Button()
         Me.txtbox_playerships = New System.Windows.Forms.TextBox()
         Me.lbl_Playerships = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
-        'btn_Start
+        'Btn_Start
         '
-        Me.btn_Start.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_Start.Font = New System.Drawing.Font("Consolas", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Start.ForeColor = System.Drawing.Color.LimeGreen
-        Me.btn_Start.Location = New System.Drawing.Point(358, 157)
-        Me.btn_Start.Name = "btn_Start"
-        Me.btn_Start.Size = New System.Drawing.Size(171, 51)
-        Me.btn_Start.TabIndex = 0
-        Me.btn_Start.Text = "Start"
-        Me.btn_Start.UseVisualStyleBackColor = False
+        Me.Btn_Start.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Btn_Start.Font = New System.Drawing.Font("Consolas", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Start.ForeColor = System.Drawing.Color.LimeGreen
+        Me.Btn_Start.Location = New System.Drawing.Point(358, 157)
+        Me.Btn_Start.Name = "Btn_Start"
+        Me.Btn_Start.Size = New System.Drawing.Size(171, 51)
+        Me.Btn_Start.TabIndex = 0
+        Me.Btn_Start.Text = "Start"
+        Me.Btn_Start.UseVisualStyleBackColor = False
         '
         'txtbox_Username
         '
@@ -62,18 +62,18 @@ Partial Class PvPMatch
         Me.lbl_P1Username.TabIndex = 2
         Me.lbl_P1Username.Text = "Enter Player 1 Username:"
         '
-        'btn_P1Enter
+        'Btn_P1Enter
         '
-        Me.btn_P1Enter.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_P1Enter.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_P1Enter.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_P1Enter.ForeColor = System.Drawing.Color.Red
-        Me.btn_P1Enter.Location = New System.Drawing.Point(16, 110)
-        Me.btn_P1Enter.Name = "btn_P1Enter"
-        Me.btn_P1Enter.Size = New System.Drawing.Size(148, 29)
-        Me.btn_P1Enter.TabIndex = 3
-        Me.btn_P1Enter.Text = "Enter"
-        Me.btn_P1Enter.UseVisualStyleBackColor = False
+        Me.Btn_P1Enter.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Btn_P1Enter.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_P1Enter.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_P1Enter.ForeColor = System.Drawing.Color.Red
+        Me.Btn_P1Enter.Location = New System.Drawing.Point(16, 110)
+        Me.Btn_P1Enter.Name = "Btn_P1Enter"
+        Me.Btn_P1Enter.Size = New System.Drawing.Size(148, 29)
+        Me.Btn_P1Enter.TabIndex = 3
+        Me.Btn_P1Enter.Text = "Enter"
+        Me.Btn_P1Enter.UseVisualStyleBackColor = False
         '
         'txtbox_playerships
         '
@@ -114,10 +114,10 @@ Partial Class PvPMatch
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.lbl_Playerships)
         Me.Controls.Add(Me.txtbox_playerships)
-        Me.Controls.Add(Me.btn_P1Enter)
+        Me.Controls.Add(Me.Btn_P1Enter)
         Me.Controls.Add(Me.lbl_P1Username)
         Me.Controls.Add(Me.txtbox_Username)
-        Me.Controls.Add(Me.btn_Start)
+        Me.Controls.Add(Me.Btn_Start)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "PvPMatch"
         Me.Text = "PvPMatch"
@@ -126,10 +126,10 @@ Partial Class PvPMatch
 
     End Sub
 
-    Friend WithEvents btn_Start As Button
+    Friend WithEvents Btn_Start As Button
     Friend WithEvents txtbox_Username As TextBox
     Friend WithEvents lbl_P1Username As Label
-    Friend WithEvents btn_P1Enter As Button
+    Friend WithEvents Btn_P1Enter As Button
     Friend WithEvents txtbox_playerships As TextBox
     Friend WithEvents lbl_Playerships As Label
     Friend WithEvents RichTextBox1 As RichTextBox
