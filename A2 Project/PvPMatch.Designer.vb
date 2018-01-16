@@ -26,9 +26,11 @@ Partial Class PvPMatch
         Me.txtbox_Username = New System.Windows.Forms.TextBox()
         Me.lbl_P1Username = New System.Windows.Forms.Label()
         Me.Btn_P1Enter = New System.Windows.Forms.Button()
-        Me.txtbox_playerships = New System.Windows.Forms.TextBox()
+        Me.txtbox_playershipx = New System.Windows.Forms.TextBox()
         Me.lbl_Playerships = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtbox_playershipy = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Btn_Start
@@ -68,20 +70,19 @@ Partial Class PvPMatch
         Me.Btn_P1Enter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_P1Enter.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_P1Enter.ForeColor = System.Drawing.Color.Red
-        Me.Btn_P1Enter.Location = New System.Drawing.Point(16, 110)
+        Me.Btn_P1Enter.Location = New System.Drawing.Point(478, 426)
         Me.Btn_P1Enter.Name = "Btn_P1Enter"
         Me.Btn_P1Enter.Size = New System.Drawing.Size(148, 29)
         Me.Btn_P1Enter.TabIndex = 3
         Me.Btn_P1Enter.Text = "Enter"
         Me.Btn_P1Enter.UseVisualStyleBackColor = False
         '
-        'txtbox_playerships
+        'txtbox_playershipx
         '
-        Me.txtbox_playerships.Location = New System.Drawing.Point(358, 71)
-        Me.txtbox_playerships.Name = "txtbox_playerships"
-        Me.txtbox_playerships.Size = New System.Drawing.Size(270, 20)
-        Me.txtbox_playerships.TabIndex = 4
-        Me.txtbox_playerships.Visible = False
+        Me.txtbox_playershipx.Location = New System.Drawing.Point(358, 432)
+        Me.txtbox_playershipx.Name = "txtbox_playershipx"
+        Me.txtbox_playershipx.Size = New System.Drawing.Size(27, 20)
+        Me.txtbox_playershipx.TabIndex = 4
         '
         'lbl_Playerships
         '
@@ -96,13 +97,30 @@ Partial Class PvPMatch
         Me.lbl_Playerships.Text = "Enter the coordinates for your ships" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "one at a time:"
         Me.lbl_Playerships.Visible = False
         '
-        'RichTextBox1
+        'Label1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(348, 414)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(234, 116)
-        Me.RichTextBox1.TabIndex = 6
-        Me.RichTextBox1.Text = ""
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(366, 455)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(15, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "x:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(414, 455)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(15, 13)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "y:"
+        '
+        'txtbox_playershipy
+        '
+        Me.txtbox_playershipy.Location = New System.Drawing.Point(417, 432)
+        Me.txtbox_playershipy.Name = "txtbox_playershipy"
+        Me.txtbox_playershipy.Size = New System.Drawing.Size(27, 20)
+        Me.txtbox_playershipy.TabIndex = 8
         '
         'PvPMatch
         '
@@ -111,9 +129,11 @@ Partial Class PvPMatch
         Me.BackgroundImage = Global.A2_Project.My.Resources.Resources.Battleship_Background__6
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(899, 561)
-        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.txtbox_playershipy)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbl_Playerships)
-        Me.Controls.Add(Me.txtbox_playerships)
+        Me.Controls.Add(Me.txtbox_playershipx)
         Me.Controls.Add(Me.Btn_P1Enter)
         Me.Controls.Add(Me.lbl_P1Username)
         Me.Controls.Add(Me.txtbox_Username)
@@ -130,7 +150,9 @@ Partial Class PvPMatch
     Friend WithEvents txtbox_Username As TextBox
     Friend WithEvents lbl_P1Username As Label
     Friend WithEvents Btn_P1Enter As Button
-    Friend WithEvents txtbox_playerships As TextBox
+    Friend WithEvents txtbox_playershipx As TextBox
     Friend WithEvents lbl_Playerships As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtbox_playershipy As TextBox
 End Class

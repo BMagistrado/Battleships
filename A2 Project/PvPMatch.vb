@@ -10,7 +10,7 @@
         player1 = New Player
         player2 = New Player
     End Sub
-    Private Sub Butt_click(sender As System.Object, e As System.EventArgs)
+    Private Sub Button_click(sender As System.Object, e As System.EventArgs)
         If TypeOf sender Is Button Then
             MsgBox(CType(sender, Button).Name)
         End If
@@ -68,7 +68,7 @@
         Btn_P1Enter.Hide()
         lbl_P1Username.Hide()
         lbl_Playerships.Hide()
-        txtbox_playerships.Hide()
+        txtbox_playershipx.Hide()
         txtbox_Username.Hide()
         'For y As Integer = 0 To 9
         ' player1.Ships(CInt(Math.Ceiling(Rnd() * 10)), CInt(Math.Ceiling(Rnd() * 10))) = True
@@ -85,46 +85,50 @@
     End Sub
 
     Private Sub Btn_P1Enter_Click(sender As Object, e As EventArgs) Handles Btn_P1Enter.Click
-        'player1.Name = "testuser"
-        player1.Name = txtbox_Username.Text
-        'MsgBox("Your username is " & Player1.Name)
-        Dim shipcounterx As Integer = 0
-        Dim shipcountery As Integer = 0
-        'Player1.Ships(Player1.playerx, Player1.playery) = txtbox_playerships.Text
+        For y As Integer = 0 To 9
+            player1.playerx = txtbox_playershipx.Text
+            Label1.Text = "x: " & player1.playerx
+            Me.Refresh()
+            System.Threading.Thread.Sleep(5)
+            player2.playery = txtbox_playershipy.Text
+            Label2.Text = "y: " & player2.playery
+            Me.Refresh()
+            System.Threading.Thread.Sleep(5)
+            If y >= 0 And y < 9 Then
+
+            End If
+            If y = 9 Then
+                Exit For
+            End If
+        Next
+        Dim ArrayLoop As Integer
+        Do Until ArrayLoop = 10
+            If ArrayLoop = 1 Then
+                player1.Ships() = txtbox_playershipx.Text
+            ElseIf ArrayLoop = 2 Then
+                player1.player
+
+            End If
+
+
+
+        Loop
+        ' Dim loopcounter As Integer
         'Do
 
-        Dim r As Random = New Random
-        For y As Integer = 0 To 9
-            player1.Ships(r.Next(1, 10), r.Next(1, 10)) = True
-            player2.Ships(r.Next(1, 10), r.Next(1, 10)) = True
-        Next
-
-
-
-
-
-        If txtbox_Username.Text = "" Then
-            ''Do
-            'player1.Ships(shipcounterx, shipcountery) = player1.Ships(shipcounterx, shipcountery)
-            'shipcounterx += 1
-            'shipcountery += 1
-            'Loop Until shipcounterx = 10
-            For y As Integer = 0 To 9
-                player1.Ships(CInt(Math.Ceiling(Rnd() * 10)), CInt(Math.Ceiling(Rnd() * 10))) = True
-                player2.Ships(CInt(Math.Ceiling(Rnd() * 10)), CInt(Math.Ceiling(Rnd() * 10))) = True
-            Next
-        Else
-            player1.Ships(player1.playerx, player1.playery) = txtbox_playerships.Text
-        End If
-
-
-
-        'MsgBox("Your ships are: " & Player1.Ships(shipcounterx, shipcountery))
-
+        'player1.playerx = txtbox_playershipx.Text
+        'Label1.Text = "x: " & player1.playerx
+        'Me.Refresh()
+        'player2.playery = txtbox_playershipx.Text
+        'Label2.Text = "y: " & player1.playery
+        'Me.Refresh()
+        'loopcounter += 1
+        'System.Threading.Thread.Sleep(10000)
+        'Loop Until loopcounter = 10
 
     End Sub
 
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class
