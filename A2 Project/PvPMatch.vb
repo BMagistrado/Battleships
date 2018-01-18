@@ -30,12 +30,14 @@
         Dim sizeX, sizeY, nameX, nameY As String
         Dim y As Integer
         Dim Array(99) As GridItem
+
         Dim xtostartinitial = xtostart
-        y = 0
+        y = 30
         sizeX = 30
         sizeY = 30
-        nameX = 0
-        nameY = 0
+        nameX = 1
+        nameY = 1
+
 
         For Each griditemelement As GridItem In Array
             griditemelement = New GridItem
@@ -52,15 +54,46 @@
 
             If loopcounter Mod 10.0 = 0 And loopcounter <> 0 Then 'MOD operator returns remainder of loopcounter/10 to check if it is at the last button
                 nameY += 1
-                nameX = 0
+                nameX = 1
                 y += 30
                 xtostart = xtostartinitial
             End If
             If TargetPlayer.Ships(nameX, nameY) Then
                 griditemelement.Text = "O"
             End If
+
+
+
+
+
+
+
         Next
         PvPMatch()
+    End Sub
+    Private Sub labelgenerator(ByRef xtostart As Integer, ByRef TargetPlayer As Player)
+        Dim increment As Integer = 30
+        Dim xtostartinitial = xtostart
+        Dim ArrayLabels(19)
+        Dim labelcounter As Integer = 0
+        Dim labely As String
+        labely = 0
+
+
+        Do
+            ArrayLabels(labelcounter) = New Label With {
+               .Parent = Me,
+            .Text = labelcounter + 1,
+            .Name = labelcounter
+            } 'changed from form of buttongrid to this for efficiency
+
+
+            ArrayLabels(labelcounter).SetBounds((xtostart) + (labelcounter * increment) + 10)
+            labelcounter += 1
+        Loop Until labelcounter = 10
+
+
+
 
     End Sub
     Private Sub Btn_Start_Click(sender As Object, e As EventArgs) Handles Btn_Start.Click
@@ -75,9 +108,11 @@
         'player2.Ships(CInt(Math.Ceiling(Rnd() * 10)), CInt(Math.Ceiling(Rnd() * 10))) = True
         ' Next
         Dim r As New Random
-        For y As Integer = 0 To 9
-            player1.Ships(r.Next(0, 9), r.Next(0, 9)) = True
-            player2.Ships(r.Next(0, 9), r.Next(0, 9)) = True
+        For y As Integer = 0 To 10
+            player1.Ships(r.Next(1, 10), r.Next(1, 10)) = True
+            player2.Ships(r.Next(1, 10), r.Next(1, 10)) = True
+            'Grid button names were not correct, to change I changed the amount the array can store
+            'to 11 from 10, and changed the starting nameX to 1
         Next
         GridGenerator(0, player1)
         GridGenerator(600, player2)
@@ -103,13 +138,13 @@
         Next
         Dim ArrayLoop As Integer
         Do Until ArrayLoop = 10
-            If ArrayLoop = 1 Then
-                player1.Ships() = txtbox_playershipx.Text
-            ElseIf ArrayLoop = 2 Then
-                player1.player
+            ' If ArrayLoop = 1 Then
+            'player1.Ships() = txtbox_playershipx.Text
+            ' ElseIf ArrayLoop = 2 Then
+            'player1.player
 
-            End If
-
+            ' End If
+            '
 
 
         Loop

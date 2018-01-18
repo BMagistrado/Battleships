@@ -2,7 +2,7 @@
     Dim x As Integer
     Dim y As Integer
     Private playerName As String
-    Private playerShips(10, 10) As Boolean
+    Private playerShips(11, 11) As Boolean
     Private Shipname As String
     Private gridbuttons(99) As GridItem
     Private health As String = 5
