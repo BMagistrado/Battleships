@@ -61,7 +61,7 @@
             If TargetPlayer.Ships(nameX, nameY) Then
                 griditemelement.Text = "O"
             End If
-
+            LabelGenerator(0, player1)
 
 
 
@@ -71,14 +71,21 @@
         Next
         PvPMatch()
     End Sub
-    Private Sub labelgenerator(ByRef xtostart As Integer, ByRef TargetPlayer As Player)
+    Private Sub LabelGenerator(ByRef xtostart As Integer, ByRef TargetPlayer As Player)
         Dim increment As Integer = 30
         Dim xtostartinitial = xtostart
-        Dim ArrayLabels(19)
+        Dim ArrayLabels(19) As LabelItem
         Dim labelcounter As Integer = 0
-        Dim labely As String
-        labely = 0
-
+        Dim labely, labelx As String
+        labely = 1
+        labelx = 1
+        For Each labelitemelement As LabelItem In ArrayLabels
+            labelitemelement = New LabelItem
+            labelitemelement.Labelx = labelx
+            labelitemelement.Labely = labely
+            labelitemelement.Parent = Me
+            labelitemelement.SetBounds(xtostart, labely)
+        Next
 
         Do
             ArrayLabels(labelcounter) = New Label With {
@@ -86,11 +93,13 @@
             .Text = labelcounter + 1,
             .Name = labelcounter
             } 'changed from form of buttongrid to this for efficiency
-
-
             ArrayLabels(labelcounter).SetBounds((xtostart) + (labelcounter * increment) + 10)
             labelcounter += 1
-        Loop Until labelcounter = 10
+
+            If labelcounter = 10 Then
+                Exit Do
+            End If
+        Loop
 
 
 
@@ -116,6 +125,7 @@
         Next
         GridGenerator(0, player1)
         GridGenerator(600, player2)
+
 
     End Sub
 
